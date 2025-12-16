@@ -1,0 +1,43 @@
+<div class="note-page">
+  <mat-card class="note-card">
+    <mat-card-title>Notes</mat-card-title>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Title</mat-label>
+        <input matInput formControlName="title">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Content</mat-label>
+        <textarea matInput formControlName="content"></textarea>
+      </mat-form-field>
+
+      <div class="actions">
+        <button mat-raised-button color="primary" type="submit">{{ editingId ? 'Update' : 'Create' }}</button>
+      </div>
+    </form>
+
+    <mat-list>
+      <mat-list-item *ngFor="let n of notes">
+        <div class="note-item">
+          <h3>{{ n.title }}</h3>
+          <p>{{ n.content }}</p>
+          <small>Author: {{ n.authorId }}</small>
+        </div>
+        <div class="note-actions">
+          <button mat-button (click)="edit(n)">Edit</button>
+          <button mat-button color="warn" (click)="remove(n)">Delete</button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <div *ngIf="auth.isAdmin()" class="admin-users">
+      <h4>Users (admin) - toggle note permission</h4>
+      <div *ngFor="let u of users">
+        <span>{{ u.firstName }} {{ u.lastName }} ({{ u.email }})</span>
+        <button mat-button (click)="togglePermission(u)">{{ u.canManageNotes ? 'Revoke' : 'Grant' }}</button>
+      </div>
+    </div>
+  </mat-card>
+</div>

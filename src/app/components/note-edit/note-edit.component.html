@@ -1,0 +1,17 @@
+<div class="note-edit-dialog">
+  <h2>Edit Note</h2>
+  <form [formGroup]="form" (ngSubmit)="save()">
+    <mat-form-field class="full-width" appearance="outline">
+      <input matInput placeholder="Title" formControlName="title" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="outline">
+      <textarea matInput rows="6" placeholder="Content" formControlName="content"></textarea>
+    </mat-form-field>
+
+    <div class="actions">
+      <button mat-button type="button" (click)="cancel()">Cancel</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Save</button>
+    </div>
+  </form>
+</div>

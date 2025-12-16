@@ -1,0 +1,180 @@
+.dashboard-card { padding: 16px; margin: 24px; }
+.dashboard-topbar { display:flex; justify-content:flex-end; align-items:center; gap:12px; padding-bottom:8px; }
+.dashboard-topbar .profile { display:flex; align-items:center; gap:8px; }
+.dashboard-topbar .avatar { width:40px; height:40px; border-radius:50%; background:#1976d2; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+.dashboard-topbar .profile-name { font-weight:600; margin-right:8px; }
+.tab-content { padding: 12px 0; }
+.note-left, .user-left { flex: 1; }
+.note-actions, .user-actions { display:flex; gap:8px; align-items:center }
+.inline-field { width: 200px; margin-right: 8px; }
+.users-tab mat-list-item { align-items: center; }
+
+.notes-grid {
+	/* Masonry-like columns to mimic Google Keep */
+	column-gap: 16px;
+	/* Responsive column count */
+	column-count: 1;
+}
+
+@media (min-width: 600px) {
+	.notes-grid { column-count: 2; }
+}
+@media (min-width: 900px) {
+	.notes-grid { column-count: 3; }
+}
+@media (min-width: 1200px) {
+	.notes-grid { column-count: 4; }
+}
+
+.note-card-wrapper {
+	display: inline-block; /* required for column layout */
+	width: 100%;
+	margin: 0 0 16px;
+	break-inside: avoid;
+}
+
+.note-card {
+	display: block;
+	border-radius: 8px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
+	background: #fff;
+	padding: 8px 8px 12px;
+	position: relative;
+}
+
+.note-card mat-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 0 8px;
+}
+
+.note-card mat-card-title {
+	font-weight: 600;
+	font-size: 1.1rem;
+	margin: 0;
+}
+
+.note-card mat-card-content {
+	padding-top: 4px;
+	white-space: pre-wrap; /* preserve line breaks */
+}
+
+.note-card .mat-icon-button {
+	color: rgba(0,0,0,0.54);
+}
+
+.note-action-overlay {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	display: flex;
+	gap: 6px;
+	z-index: 10;
+}
+
+.card-top { display:flex; gap:12px; align-items:flex-start; padding-bottom:8px; }
+.card-logo { width:56px; height:56px; background:#f5f5f5; border-radius:6px; display:flex; align-items:center; justify-content:center; }
+.card-logo mat-icon { font-size:28px; color:rgba(0,0,0,0.7); }
+.card-head { flex:1; }
+.card-title { font-weight:700; font-size:1.05rem; }
+.card-subtitle { font-size:0.85rem; color:rgba(0,0,0,0.6); margin-top:4px; }
+
+.card-footer { display:flex; align-items:center; padding-top:8px; }
+.card-footer .spacer { flex:1; }
+.card-footer .info-btn { color: rgba(0,0,0,0.54); }
+
+.note-card:hover { transform: translateY(-2px); transition: transform 120ms ease-in; }
+
+.full-width { width: 100%; }
+.title-field { max-width: 220px; margin-right: 8px; }
+
+.notes-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+.notes-header .left-actions { display:flex; align-items:center; gap:8px; }
+.notes-header .right-actions { display:flex; align-items:center; gap:12px; }
+.notes-header .profile { display:flex; align-items:center; gap:10px; margin-left: 8px; }
+.notes-header .avatar { width:40px; height:40px; border-radius:50%; background:#1976d2; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; }
+.notes-header .profile-name { font-weight:600; margin-right:6px; }
+.view-toggle button { margin-left: 8px; }
+.view-toggle button.active { background: rgba(0,0,0,0.06); }
+
+.create-toggle { margin-left: 12px; }
+.create-form { padding: 12px 0 8px; }
+.create-actions { display:flex; gap:8px; margin-top:8px; }
+
+.notes-list mat-list-item {
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	padding: 16px 12px;
+	min-height: 72px;
+	margin-bottom: 12px; /* gap between rows */
+}
+.list-main { flex: 1; min-width: 0; }
+.list-title { font-weight:600; font-size:1rem; }
+.list-content { margin-top:6px; color: rgba(0,0,0,0.8); white-space: pre-wrap; }
+.list-actions { margin-left: auto; display:flex; gap:8px; align-items:center; }
+.edit-form { display:flex; flex-direction:column; gap:8px; }
+
+/* Users tab layout tweaks */
+.users-tab mat-list-item {
+	display: flex;
+	flex-direction: row;
+	/* vertically center the content so it lines up with header labels */
+	align-items: center;
+	gap: 12px;
+	padding: 12px 12px;
+	/* ensure items are separated and avoid overlap */
+	margin-bottom: 8px;
+	border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.users-tab .user-columns { display:flex; gap:16px; align-items:center; flex:1 1 auto; min-width:0; }
+.users-tab .user-name { font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex: 2 1 0; }
+.users-tab .user-email { color: rgba(0,0,0,0.7); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex: 2 1 0; }
+.users-tab .user-role { flex: 1 0 120px; color: rgba(0,0,0,0.8); }
+.users-tab .user-access { flex: 0 0 80px; text-align:center; color: rgba(0,0,0,0.8); }
+.users-tab .edit-columns { display:flex; gap:8px; align-items:center; width:100%; }
+.users-tab .edit-columns .inline-field { flex: 1 1 0; min-width:0; }
+
+/* Column headers */
+.users-tab .user-headers {
+	display:flex;
+	gap:16px;
+	/* match mat-list-item padding so header lines up exactly with rows */
+	padding: 12px 12px;
+	border-bottom: 1px solid rgba(0,0,0,0.08);
+	margin-bottom: 8px;
+	align-items:center;
+	color: rgba(0,0,0,0.7);
+	font-weight:600;
+}
+.users-tab .user-headers .user-name { flex: 2 1 0; }
+.users-tab .user-headers .user-email { flex: 2 1 0; }
+.users-tab .user-headers .user-role { flex: 1 0 120px; }
+.users-tab .user-headers .user-access { flex: 0 0 80px; text-align:center; }
+.users-tab .user-headers .user-actions { width: 160px; text-align:right; }
+.users-tab .user-left {
+	display: block;
+	flex: 1 1 auto;
+	min-width: 0; /* allow text to wrap */
+}
+.users-tab .user-left strong { display:block; font-weight:600; }
+.users-tab .user-left div { color: rgba(0,0,0,0.7); }
+.users-tab .user-actions {
+	display:flex;
+	gap:10px;
+	align-items:center;
+	/* make the actions column the same fixed width as the header so buttons line up */
+	flex: 0 0 160px;
+	justify-content: flex-end;
+	margin-left: 0;
+}
+.users-tab .permission-btn { min-width: 64px; }
+.users-tab .user-actions .mat-icon-button { color: rgba(0,0,0,0.8); }
+.users-tab .user-actions .mat-icon { font-size: 20px; }
+.users-tab .permission-btn { color: #1976d2; }
+
+@media (max-width: 600px) {
+	.users-tab mat-list-item { flex-direction: column; align-items: flex-start; }
+	.users-tab .user-actions { margin-left: 0; margin-top:8px; }
+}

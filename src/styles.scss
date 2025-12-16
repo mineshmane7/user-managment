@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Override MDC list primary text to use flex layout so content can be aligned in columns */
+.mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
+	display: flex !important;
+	align-items: center !important;
+}

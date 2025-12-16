@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "firstName": "jon",
+      "lastName": "trump",
+      "email": "trump@gmail.com",
+      "role": "user",
+      "canManageNotes": true,
+      "password": "1234",
+      "id": "1",
+      "canEditNotes": true,
+      "canDeleteNotes": false
+    },
+    {
+      "id": "2",
+      "firstName": "Bob",
+      "lastName": "Smith",
+      "email": "bob@example.com",
+      "password": "adminpass",
+      "role": "admin",
+      "canManageNotes": false
+    },
+    {
+      "id": "a56c",
+      "firstName": "amit",
+      "lastName": "shah",
+      "email": "amit.shah@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": false,
+      "canDeleteNotes": false,
+      "canManageNotes\\": "true\\",
+      "canManageNotes": false
+    },
+    {
+      "id": "ed45",
+      "firstName": "rohit",
+      "lastName": "sharma",
+      "email": "rohit.sharma@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "TRUE",
+      "canDeleteNotes": "TRUE",
+      "canManageNotes": "false"
+    },
+    {
+      "id": "3b05",
+      "firstName": "Minesh",
+      "lastName": "Mane",
+      "email": "mane@gmail.com",
+      "password": "1234",
+      "role": "admin"
+    }
+  ],
+  "notes": [
+    {
+      "title": "Welcome",
+      "content": "Welcome to the notes demo. fixed dailog box",
+      "id": "1"
+    },
+    {
+      "id": "07c6",
+      "title": "fist note",
+      "content": "this is first not",
+      "authorId": "a001",
+      "createdAt": "2025-12-11T12:12:14.061Z"
+    },
+    {
+      "title": "new note",
+      "content": "deted note edited",
+      "id": "6c17"
+    },
+    {
+      "id": "d520",
+      "title": "interceptor",
+      "content": "conetent",
+      "createdAt": "2025-12-12T06:08:52.929Z"
+    },
+    {
+      "id": "a0c9",
+      "title": "create nite",
+      "content": "note created",
+      "createdAt": "2025-12-12T13:34:29.941Z"
+    }
+  ]
+}
