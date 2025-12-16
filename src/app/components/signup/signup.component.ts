@@ -50,7 +50,6 @@ export class SignupComponent {
     }
 
     const payload = this.signupForm.value;
-    // Try to persist via UserService, then navigate to login
     this.userService.create(payload).subscribe({
       next: (res) => {
         console.log('User created', res);
@@ -58,7 +57,6 @@ export class SignupComponent {
       },
       error: (err) => {
         console.error('Create user failed', err);
-        // Still navigate to login to allow user to try login or contact support
         this.router.navigate(['/login']);
       }
     });

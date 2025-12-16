@@ -41,7 +41,7 @@
       "role": "user",
       "canEditNotes": "TRUE",
       "canDeleteNotes": "TRUE",
-      "canManageNotes": "false"
+      "canManageNotes\\": "false\\"
     },
     {
       "id": "3b05",
@@ -50,12 +50,122 @@
       "email": "mane@gmail.com",
       "password": "1234",
       "role": "admin"
+    },
+    {
+      "id": "5580",
+      "firstName": "rahul",
+      "lastName": "gandhi",
+      "email": "mane1@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "TRUE",
+      "canDeleteNotes": "TRUE",
+      "canManageNotes\\": "true\\"
+    },
+    {
+      "id": "3caa",
+      "firstName": "rohit",
+      "lastName": "sharma",
+      "email": "rohit.sharma@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "TRUE",
+      "canDeleteNotes": "TRUE",
+      "canManageNotes\\": "false\\"
+    },
+    {
+      "id": "d420",
+      "firstName": "amit",
+      "lastName": "shah",
+      "email": "amit.shah@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "TRUE",
+      "canDeleteNotes": "FALSE",
+      "canManageNotes\\": "true\\"
+    },
+    {
+      "id": "1963",
+      "firstName": "vivek",
+      "lastName": "malhotra",
+      "email": "vivek.m@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "FALSE",
+      "canDeleteNotes": "TRUE",
+      "canManageNotes\\": "false\\"
+    },
+    {
+      "id": "1d51",
+      "firstName": "sunita",
+      "lastName": "iyer",
+      "email": "sunita.iyer@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "TRUE",
+      "canDeleteNotes": "TRUE",
+      "canManageNotes\\": "true\\"
+    },
+    {
+      "id": "d5f1",
+      "firstName": "priya",
+      "lastName": "verma",
+      "email": "priya.verma@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "FALSE",
+      "canDeleteNotes": "FALSE",
+      "canManageNotes\\": "true\\"
+    },
+    {
+      "id": "43af",
+      "firstName": "neha",
+      "lastName": "patel",
+      "email": "neha.patel@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "TRUE",
+      "canDeleteNotes": "FALSE",
+      "canManageNotes\\": "false\\"
+    },
+    {
+      "id": "8dba",
+      "firstName": "anil",
+      "lastName": "kapoor",
+      "email": "anil.kapoor@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "FALSE",
+      "canDeleteNotes": "TRUE",
+      "canManageNotes\\": "true\\"
+    },
+    {
+      "id": "39c4",
+      "firstName": "pooja",
+      "lastName": "singh",
+      "email": "pooja.singh@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "TRUE",
+      "canDeleteNotes": "FALSE",
+      "canManageNotes\\": "true\\"
+    },
+    {
+      "id": "7983",
+      "firstName": "arjun",
+      "lastName": "mehta",
+      "email": "arjun.mehta@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "FALSE",
+      "canDeleteNotes": "FALSE",
+      "canManageNotes\\": "false\\"
     }
   ],
   "notes": [
     {
       "title": "Welcome",
-      "content": "Welcome to the notes demo. fixed dailog box",
+      "content": "Welcome to the notes demo.",
       "id": "1"
     },
     {

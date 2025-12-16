@@ -10,9 +10,7 @@
 .users-tab mat-list-item { align-items: center; }
 
 .notes-grid {
-	/* Masonry-like columns to mimic Google Keep */
 	column-gap: 16px;
-	/* Responsive column count */
 	column-count: 1;
 }
 

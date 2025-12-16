@@ -27,7 +27,6 @@ export class PermissionDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: PermissionDialogData
   ) {
     const u = data?.user;
-    // Backwards-compat: if older `canManageNotes` flag exists, assume it maps to both edit & delete
     this.canEdit = !!(u && ((u as any).canEditNotes ?? (u.canManageNotes ?? false)));
     this.canDelete = !!(u && ((u as any).canDeleteNotes ?? (u.canManageNotes ?? false)));
   }

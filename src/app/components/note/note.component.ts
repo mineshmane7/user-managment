@@ -95,13 +95,11 @@ export class NoteComponent {
     this.noteService.delete(note.id).subscribe(() => { this.snack.open('Note deleted', 'Close', { duration: 2000 }); this.load(); });
   }
 
-  // Admin-only: toggle user's canManageNotes flag
   togglePermission(user: User) {
     if (!this.auth.isAdmin()) return;
     const updated = { ...user, canManageNotes: !user.canManageNotes };
     this.userService.update(user.id as number, updated).subscribe((u) => {
       this.snack.open(`Updated ${u.firstName}'s permissions`, 'Close', { duration: 2000 });
-      // refresh users
       this.userService.getAll().subscribe(list => this.users = list);
     });
   }
