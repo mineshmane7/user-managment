@@ -10,6 +10,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {
+  ButtonModule,
+  ListModule,
+  TableModule,
+  InputModule
+} from 'carbon-components-angular';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { NoteEditComponent } from '../note-edit/note-edit.component';
@@ -18,8 +24,9 @@ import { NoteService, Note } from '../../services/note.service';
 import { UserService, User } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { SearchPipe } from '../../pipe/search.pipe';
+// import { SearchPipe } from '../../pipe/search.pipe';
 import * as Papa from 'papaparse';
+import { TableComponent } from "../table/table.component";
 
 @Component({
   selector: 'app-dashboard',
@@ -38,8 +45,11 @@ import * as Papa from 'papaparse';
     MatDialogModule,
     MatSelectModule,
     MatCheckboxModule,
-    SearchPipe,
-  ],
+    // SearchPipe,
+    InputModule,
+    ListModule,
+    TableComponent
+],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })

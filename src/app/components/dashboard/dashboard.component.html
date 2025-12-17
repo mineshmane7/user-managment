@@ -120,17 +120,20 @@
     </mat-tab>
     <mat-tab label="Users">
       <div style="padding-top: 10px;padding-bottom: 10px;">
-        <input type="file" accept=".csv" (change)="onFileChange($event)" />
+        <input cdsText type="file" accept=".csv" (change)="onFileChange($event)" />
 
       </div>
+
       <div>
-        <input type="text" matInput type="text" placeholder="search" [(ngModel)]="searchString">
+        <!-- <input type="text" matInput type="text" placeholder="search" [(ngModel)]="searchString"> -->
+        <input cdsText [(ngModel)]="searchString" placeholder="search" />
+
+
       </div>
+      <app-table [inputFromParent]="users"></app-table>
 
 
-
-
-      <div class="tab-content users-tab">
+      <!-- <div class="tab-content users-tab">
         <div class="user-headers">
           <div class="user-name">Name</div>
           <div class="user-email">Email</div>
@@ -182,7 +185,7 @@
             </div>
           </mat-list-item>
         </mat-list>
-      </div>
+      </div> -->
     </mat-tab>
   </mat-tab-group>
 </mat-card>
