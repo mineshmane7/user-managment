@@ -1,5 +1,7 @@
+<div>
+    <input cdsText [(ngModel)]="searchString" placeholder="search" (keyup)="onSearch($event)" />
 
- 
 
+
+</div>
 <cds-table [model]="model"></cds-table>
-

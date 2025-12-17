@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {
   ButtonModule,
@@ -12,7 +13,7 @@ import {
 
 @Component({
   selector: 'app-table',
-  imports: [TableModule, ButtonModule, ListModule, InputModule, MatInputModule],
+  imports: [TableModule, ButtonModule, ListModule, InputModule, MatInputModule,FormsModule],
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
 })
@@ -50,14 +51,15 @@ export class TableComponent {
     ]);
   }
 
-  // onSearch(searchText: string) {
-  //   const filtered = this.inputFromParent.filter((item: any) => {
-  //     return (
-  //       item.lastName.toLocaleLowerCase().includes(searchText) ||
-  //       item.firstName.toLocaleLowerCase().includes(searchText)
-  //     );
-  //   });
+  onSearch(e:any) {
+    const searchText = e.target.value
+    const filtered = this.inputFromParent.filter((item: any) => {
+      return (
+        item.lastName.toLocaleLowerCase().includes(searchText) ||
+        item.firstName.toLocaleLowerCase().includes(searchText)
+      );
+    });
 
-  //   this.updateTable(filtered);
-  // }
+    this.updateTable(filtered);
+  }
 }

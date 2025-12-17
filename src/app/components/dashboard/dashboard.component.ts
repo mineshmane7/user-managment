@@ -14,6 +14,7 @@ import {
   ButtonModule,
   ListModule,
   TableModule,
+  TabsModule,
   InputModule
 } from 'carbon-components-angular';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
@@ -47,8 +48,10 @@ import { TableComponent } from "../table/table.component";
     MatCheckboxModule,
     // SearchPipe,
     InputModule,
+    TabsModule,
     ListModule,
-    TableComponent
+    TableComponent,
+    ButtonModule
 ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],

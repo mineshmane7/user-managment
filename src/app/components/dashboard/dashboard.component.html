@@ -1,14 +1,14 @@
-<mat-card class="dashboard-card">
+<div class="dashboard-card">
   <div class="dashboard-topbar">
     <div class="profile" *ngIf="auth.currentUser">
       <div class="avatar">{{ getUserInitials() }}</div>
       <div class="profile-name">{{ auth.currentUser.firstName }} {{ auth.currentUser.lastName }}</div>
-      <button mat-icon-button aria-label="Logout" title="Logout" (click)="logout()"><mat-icon>logout</mat-icon></button>
+      <button   aria-label="Logout" title="Logout" (click)="logout()"><mat-icon >logout</mat-icon></button>
     </div>
   </div>
 
-  <mat-tab-group>
-    <mat-tab label="Notes">
+  <cds-tabs>
+    <cds-tab label="Notes" heading="Notes">
       <div class="tab-content">
         <div class="notes-header">
           <div class="right-actions">
@@ -21,8 +21,6 @@
                 {{ showCreateForm ? 'Cancel' : 'Create Note' }}
               </button>
             </div>
-
-
           </div>
         </div>
 
@@ -40,11 +38,9 @@
           <mat-divider></mat-divider>
         </div>
 
-        <!-- GRID VIEW -->
         <div class="notes-grid" *ngIf="viewMode==='grid'">
           <div class="note-card-wrapper" *ngFor="let n of notes">
             <mat-card class="note-card">
-              <!-- top-right edit/delete overlay -->
               <div class="note-action-overlay">
                 <ng-container *ngIf="editingNoteId !== n.id; else saveCancelActions">
                   <button mat-icon-button color="primary" aria-label="Edit note" (click)="startEditNote(n)"
@@ -117,75 +113,12 @@
           </mat-list>
         </div>
       </div>
-    </mat-tab>
-    <mat-tab label="Users">
+    </cds-tab>
+    <cds-tab label="Users" heading="Users">
       <div style="padding-top: 10px;padding-bottom: 10px;">
-        <input cdsText type="file" accept=".csv" (change)="onFileChange($event)" />
-
-      </div>
-
-      <div>
-        <!-- <input type="text" matInput type="text" placeholder="search" [(ngModel)]="searchString"> -->
-        <input cdsText [(ngModel)]="searchString" placeholder="search" />
-
-
+        <input cdsText type="file" accept=".csv" (change)="onFileChange($event)" placeholder="add file" />
       </div>
       <app-table [inputFromParent]="users"></app-table>
-
-
-      <!-- <div class="tab-content users-tab">
-        <div class="user-headers">
-          <div class="user-name">Name</div>
-          <div class="user-email">Email</div>
-          <div class="user-role">Role</div>
-          <div class="user-access">Permissions</div>
-          <div class="user-actions">Actions</div>
-        </div>
-        <mat-list>
-          <mat-list-item *ngFor="let u of users | search :searchString ">
-            <div class="user-columns">
-              <ng-container *ngIf="editingUserId !== u.id; else editUserTpl">
-                <div class="user-name">{{ u.firstName }} {{ u.lastName }}</div>
-                <div class="user-email">{{ u.email }}</div>
-                <div class="user-role">{{ u.role || 'user' }}</div>
-                <div class="user-access">{{ u.canManageNotes ? 'Yes' : 'No' }}</div>
-              </ng-container>
-              <ng-template #editUserTpl>
-                <div class="edit-columns">
-                  <mat-form-field appearance="outline" class="inline-field"><input matInput
-                      [(ngModel)]="_editFirstNameMap[getUserKey(u)]" placeholder="First"></mat-form-field>
-                  <mat-form-field appearance="outline" class="inline-field"><input matInput
-                      [(ngModel)]="_editLastNameMap[getUserKey(u)]" placeholder="Last"></mat-form-field>
-                  <mat-form-field appearance="outline" class="inline-field"><input matInput
-                      [(ngModel)]="_editEmailMap[getUserKey(u)]" placeholder="Email"></mat-form-field>
-                  <mat-form-field appearance="outline" class="inline-field">
-                    <mat-select [(ngModel)]="_editRoleMap[getUserKey(u)]" placeholder="Role">
-                      <mat-option value="user">User</mat-option>
-                      <mat-option value="admin">Admin</mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                  <mat-checkbox [(ngModel)]="_editAccessMap[getUserKey(u)]">Can Manage</mat-checkbox>
-                </div>
-              </ng-template>
-            </div>
-
-            <div class="user-actions">
-              <ng-container *ngIf="editingUserId !== u.id; else editingUserActions">
-                <button mat-icon-button color="primary" (click)="startEditUser(u)"
-                  [disabled]="!auth.isAdmin()"><mat-icon>edit</mat-icon></button>
-                <button mat-icon-button color="warn" (click)="deleteUser(u.id)"
-                  [disabled]="!auth.isAdmin()"><mat-icon>delete</mat-icon></button>
-                <button mat-button *ngIf="auth.isAdmin()" (click)="togglePermission(u)">{{ u.canManageNotes ? 'Revoke' :
-                  'Grant' }}</button>
-              </ng-container>
-              <ng-template #editingUserActions>
-                <button mat-button color="primary" (click)="saveUser(u)">Save</button>
-                <button mat-button (click)="cancelEditUser(u)">Cancel</button>
-              </ng-template>
-            </div>
-          </mat-list-item>
-        </mat-list>
-      </div> -->
-    </mat-tab>
-  </mat-tab-group>
-</mat-card>
+    </cds-tab>
+  </cds-tabs>
+</div>
