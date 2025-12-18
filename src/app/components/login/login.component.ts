@@ -88,16 +88,9 @@ export class LoginComponent {
             duration: 3000,
           });
         },
-        // if (!user) {
-        //   this.snackBar.open('Invalid credentials', 'Close', { duration: 3000 });
-        //   return;
-        // }
-        // this.snackBar.open('Login successful', 'Close', { duration: 2000 });
-        // this.router.navigate(['/notes']);
+   
       }
-      //  err => {
-      //   this.snackBar.open('Login error: ' + (err?.message || err), 'Close', { duration: 3000 });
-      // }
+
     );
   }
 }

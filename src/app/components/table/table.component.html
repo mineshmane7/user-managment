@@ -1,7 +1,12 @@
 <div>
     <input cdsText [(ngModel)]="searchString" placeholder="search" (keyup)="onSearch($event)" />
-
-
-
 </div>
+<ng-template #actionTemplate let-row="data">
+    <button size="sm" (click)="sendMessage(row.id)">
+        delete
+    </button>
+    <button size="sm" (click)="edit(row)">
+        Edit
+    </button>
+</ng-template>
 <cds-table [model]="model"></cds-table>

@@ -33,17 +33,6 @@
       "canManageNotes": false
     },
     {
-      "id": "ed45",
-      "firstName": "rohit",
-      "lastName": "sharma",
-      "email": "rohit.sharma@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "TRUE",
-      "canDeleteNotes": "TRUE",
-      "canManageNotes\\": "false\\"
-    },
-    {
       "id": "3b05",
       "firstName": "Minesh",
       "lastName": "Mane",
@@ -63,51 +52,18 @@
       "canManageNotes\\": "true\\"
     },
     {
-      "id": "3caa",
-      "firstName": "rohit",
-      "lastName": "sharma",
-      "email": "rohit.sharma@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "TRUE",
-      "canDeleteNotes": "TRUE",
-      "canManageNotes": "false"
-    },
-    {
-      "id": "d420",
-      "firstName": "amit",
-      "lastName": "shah",
-      "email": "amit.shah@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "TRUE",
-      "canDeleteNotes": "FALSE",
-      "canManageNotes": "false"
-    },
-    {
-      "id": "1963",
-      "firstName": "vivek",
-      "lastName": "malhotra",
-      "email": "vivek.m@gmail.com",
+      "id": "1fff",
+      "firstName": "rahul",
+      "lastName": "gandhi",
+      "email": "mane1@gmail.com",
       "password": "1234",
       "role": "user",
       "canEditNotes": "FALSE",
-      "canDeleteNotes": "TRUE",
-      "canManageNotes": "false"
+      "canDeleteNotes": "FALSE",
+      "canManageNotes\\": "FALSE"
     },
     {
-      "id": "1d51",
-      "firstName": "sunita",
-      "lastName": "iyer",
-      "email": "sunita.iyer@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "TRUE",
-      "canDeleteNotes": "TRUE",
-      "canManageNotes": "false"
-    },
-    {
-      "id": "d5f1",
+      "id": "3728",
       "firstName": "priya",
       "lastName": "verma",
       "email": "priya.verma@gmail.com",
@@ -115,49 +71,29 @@
       "role": "user",
       "canEditNotes": "FALSE",
       "canDeleteNotes": "FALSE",
-      "canManageNotes": "false"
+      "canManageNotes\\": "FALSE"
     },
     {
-      "id": "43af",
-      "firstName": "neha",
-      "lastName": "patel",
-      "email": "neha.patel@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "TRUE",
-      "canDeleteNotes": "FALSE"
-    },
-    {
-      "id": "8dba",
-      "firstName": "anil",
-      "lastName": "kapoor",
-      "email": "anil.kapoor@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "FALSE",
-      "canDeleteNotes": "TRUE"
-    },
-    {
-      "id": "39c4",
-      "firstName": "pooja",
-      "lastName": "singh",
-      "email": "pooja.singh@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "TRUE",
-      "canDeleteNotes": "FALSE",
-      "canManageNotes": "false"
-    },
-    {
-      "id": "7983",
-      "firstName": "arjun",
-      "lastName": "mehta",
-      "email": "arjun.mehta@gmail.com",
+      "id": "4aee",
+      "firstName": "amit",
+      "lastName": "shah",
+      "email": "amit.shah@gmail.com",
       "password": "1234",
       "role": "user",
       "canEditNotes": "FALSE",
       "canDeleteNotes": "FALSE",
-      "canManageNotes": "false"
+      "canManageNotes\\": "FALSE"
+    },
+    {
+      "id": "cc70",
+      "firstName": "sunita",
+      "lastName": "iyer",
+      "email": "sunita.iyer@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "canEditNotes": "FALSE",
+      "canDeleteNotes": "FALSE",
+      "canManageNotes\\": "FALSE"
     }
   ],
   "notes": [

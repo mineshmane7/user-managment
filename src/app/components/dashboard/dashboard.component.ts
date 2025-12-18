@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FormsModule } from '@angular/forms';
@@ -35,6 +35,7 @@ import { TableComponent } from "../table/table.component";
   imports: [
     CommonModule,
     FormsModule,
+    TableModule,
     MatTabsModule,
     MatCardModule,
     MatListModule,
@@ -47,6 +48,7 @@ import { TableComponent } from "../table/table.component";
     MatSelectModule,
     MatCheckboxModule,
     // SearchPipe,
+    
     InputModule,
     TabsModule,
     ListModule,
@@ -55,6 +57,8 @@ import { TableComponent } from "../table/table.component";
 ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA] // ✅ important for cds-* tags
+
 })
 export class DashboardComponent {
   csvData: any[] = [];
@@ -93,8 +97,12 @@ export class DashboardComponent {
   }
 
   loadAll() {
+    console.log("loading all");
     this.noteService.getAll().subscribe((n) => (this.notes = n));
     this.userService.getAll().subscribe((u) => (this.users = u));
+
+    console.log("this user",this.users);
+    
   }
 
   toggleCreateForm(show?: boolean) {
@@ -184,7 +192,7 @@ export class DashboardComponent {
     }
   }
 
-  deleteNote(id?: number) {
+  deleteNote(id?: any) {
     if (!id) return;
     this.noteService.delete(id).subscribe(
       () => {
@@ -252,8 +260,13 @@ export class DashboardComponent {
       if (res) this.loadAll();
     });
   }
+ receiveMessage($event:any) {
+        console.log(" deleteUser id", $event);
 
-  deleteUser(id?: number) {
+  }
+  deleteUser(id: any) {
+    console.log(" deleteUser id", id.target.value);
+    
     if (!id) return;
     this.userService.delete(id).subscribe(
       () => {
