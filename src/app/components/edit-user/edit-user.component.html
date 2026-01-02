@@ -1,0 +1,23 @@
+<div class="note-edit-dialog">
+    <h5>Edit User Role</h5>
+    <!-- <form [formGroup]="form" (ngSubmit)="save()"> -->
+    <div style="display: flex; flex-direction: row; gap: 20px;">
+        <div>
+            <h6>{{user.firstName +' '+ user.lastName}}</h6>
+
+        </div>
+        <mat-form-field>
+            <mat-label>Role</mat-label>
+            <select matNativeControl required [(ngModel)]="selected"     (change)="onRoleChange($event)"
+>
+                <option *ngFor="let opt of items" [value]="opt.content">{{opt.content}}</option>
+            </select>
+        </mat-form-field>
+    </div>
+
+    <div class="actions">
+        <button mat-button type="button" (click)="cancel()">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+    </div>
+    <!-- </form> -->
+</div>

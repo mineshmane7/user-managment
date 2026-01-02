@@ -15,7 +15,7 @@ import {
   ListModule,
   TableModule,
   TabsModule,
-  InputModule
+  InputModule,
 } from 'carbon-components-angular';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -27,7 +27,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 // import { SearchPipe } from '../../pipe/search.pipe';
 import * as Papa from 'papaparse';
-import { TableComponent } from "../table/table.component";
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -48,17 +48,15 @@ import { TableComponent } from "../table/table.component";
     MatSelectModule,
     MatCheckboxModule,
     // SearchPipe,
-    
     InputModule,
     TabsModule,
     ListModule,
     TableComponent,
-    ButtonModule
-],
+    ButtonModule,
+  ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA] // ✅ important for cds-* tags
-
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
 })
 export class DashboardComponent {
   csvData: any[] = [];
@@ -97,12 +95,11 @@ export class DashboardComponent {
   }
 
   loadAll() {
-    console.log("loading all");
+    console.log('loading all');
     this.noteService.getAll().subscribe((n) => (this.notes = n));
     this.userService.getAll().subscribe((u) => (this.users = u));
 
-    console.log("this user",this.users);
-    
+    console.log('this user', this.users);
   }
 
   toggleCreateForm(show?: boolean) {
@@ -171,7 +168,6 @@ export class DashboardComponent {
     this.noteService.update(id, updated).subscribe(
       () => {
         this.snack.open('Note updated', 'Close', { duration: 2000 });
-        // clean up temp edit maps
         delete this._editTitleMap[k];
         delete this._editContentMap[k];
         this.editingNoteId = null;
@@ -260,13 +256,12 @@ export class DashboardComponent {
       if (res) this.loadAll();
     });
   }
- receiveMessage($event:any) {
-        console.log(" deleteUser id", $event);
-
+  receiveMessage($event: any) {
+    console.log(' deleteUser id', $event);
   }
+
   deleteUser(id: any) {
-    console.log(" deleteUser id", id.target.value);
-    
+    console.log(' deleteUser id', id.target.value);
     if (!id) return;
     this.userService.delete(id).subscribe(
       () => {

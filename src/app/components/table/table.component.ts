@@ -4,8 +4,10 @@ import {
   EventEmitter,
   Inject,
   Input,
+  OnChanges,
   Output,
   PLATFORM_ID,
+  SimpleChanges,
   TemplateRef,
   ViewChild,
 } from '@angular/core';
@@ -22,6 +24,9 @@ import {
 } from 'carbon-components-angular';
 import { UserService } from '../../services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NoteEditComponent } from '../note-edit/note-edit.component';
+import { EditUserComponent } from '../edit-user/edit-user.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-table',
@@ -36,7 +41,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './table.component.html',
   styleUrl: './table.component.scss',
 })
-export class TableComponent {
+export class TableComponent implements OnChanges {
   @Input() inputFromParent: any;
   @Output() messageEvent = new EventEmitter<any>();
 
@@ -49,10 +54,20 @@ export class TableComponent {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private snack: MatSnackBar,
-    private userService: UserService
+    private userService: UserService,
+    private dialog: MatDialog
   ) {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.inputFromParent);
+
+    if (changes['inputFromParent']) {
+      this.updateTable(changes['inputFromParent'].currentValue);
+    }
+  }
+
   ngOnInit() {
+    console.log(this.inputFromParent);
     this.isBrowser = isPlatformBrowser(this.platformId);
 
     console.log(this.inputFromParent);
@@ -73,6 +88,7 @@ export class TableComponent {
   ngAfterViewInit() {
     this.updateTable(this.inputFromParent);
   }
+
   sendMessage(row: number) {
     this.deleteUser(row);
   }
@@ -87,7 +103,7 @@ export class TableComponent {
 
         this.updateTable(this.inputFromParent);
 
-        console.log(this.inputFromParent);
+        // console.log(this.inputFromParent);
 
         this.snack.open('User deleted', 'Close', { duration: 2000 });
       },
@@ -113,6 +129,17 @@ export class TableComponent {
   }
   edit(row: any) {
     console.log(row);
+    if (!row || row.id == null) return;
+    const ref = this.dialog.open(EditUserComponent, {
+      width: '640px',
+      data: { user: row },
+    });
+    ref.afterClosed().subscribe((res) => {
+      if (res)  {
+        console.log("record updated");  
+      }
+
+    });
   }
   onSearch(e: any) {
     const searchText = e.target.value;

@@ -50,50 +50,6 @@
       "canEditNotes": "TRUE",
       "canDeleteNotes": "TRUE",
       "canManageNotes\\": "true\\"
-    },
-    {
-      "id": "1fff",
-      "firstName": "rahul",
-      "lastName": "gandhi",
-      "email": "mane1@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "FALSE",
-      "canDeleteNotes": "FALSE",
-      "canManageNotes\\": "FALSE"
-    },
-    {
-      "id": "3728",
-      "firstName": "priya",
-      "lastName": "verma",
-      "email": "priya.verma@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "FALSE",
-      "canDeleteNotes": "FALSE",
-      "canManageNotes\\": "FALSE"
-    },
-    {
-      "id": "4aee",
-      "firstName": "amit",
-      "lastName": "shah",
-      "email": "amit.shah@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "FALSE",
-      "canDeleteNotes": "FALSE",
-      "canManageNotes\\": "FALSE"
-    },
-    {
-      "id": "cc70",
-      "firstName": "sunita",
-      "lastName": "iyer",
-      "email": "sunita.iyer@gmail.com",
-      "password": "1234",
-      "role": "user",
-      "canEditNotes": "FALSE",
-      "canDeleteNotes": "FALSE",
-      "canManageNotes\\": "FALSE"
     }
   ],
   "notes": [
